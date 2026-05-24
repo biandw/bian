@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Quest 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --pink-50: #fff0f6;
+            --pink-100: #ffd6e8;
+            --pink-200: #ffadd2;
+            --pink-300: #ff85c2;
+            --pink-400: #f759ab;
+            --pink-500: #eb2f96;
+            --pink-600: #c41d7f;
+            --rose: #ff4d94;
+            --rose-light: #ff80b3;
+            --hot-pink: #ff1a75;
+            --cream: #fff8fc;
+            --white: #ffffff;
+            --text-dark: #3d0026;
+            --text-mid: #8c1a5a;
+            --text-light: #c45c8e;
+            --shadow-pink: 0 4px 24px rgba(235, 47, 150, 0.15);
+            --shadow-card: 0 2px 16px rgba(235, 47, 150, 0.10);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--pink-50);
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 15% 20%, rgba(255, 173, 210, 0.35) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(247, 89, 171, 0.20) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(255, 214, 232, 0.25) 0%, transparent 60%);
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 173, 210, 0.3), transparent 70%);
+            top: -80px;
+            right: -80px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(247, 89, 171, 0.2), transparent 70%);
+            bottom: -60px;
+            left: -60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        /* HEADER */
+        
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: fadeDown 0.6s ease both;
+        }
+        
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-500));
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: var(--pink-600);
+            line-height: 1.1;
+            letter-spacing: 1px;
+        }
+        
+        .header h1 span {
+            color: var(--pink-400);
+        }
+        
+        .header p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-top: 6px;
+        }
+        /* NAV TABS */
+        
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            background: white;
+            border: 2px solid var(--pink-100);
+            border-radius: var(--radius);
+            padding: 6px;
+            animation: fadeUp 0.5s ease both;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            padding: 10px 8px;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: transparent;
+            color: var(--text-mid);
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        
+        .nav-tab:hover {
+            background: var(--pink-50);
+        }
+        
+        .nav-tab.active {
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-500));
+            color: white;
+            box-shadow: 0 3px 12px rgba(235, 47, 150, 0.35);
+        }
+        /* LEVEL SELECTOR */
+        
+        .level-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.6s 0.1s ease both;
+        }
+        
+        .lvl-btn {
+            padding: 10px 6px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--pink-100);
+            background: white;
+            color: var(--text-mid);
+            font-family: 'Nunito', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .lvl-btn .lvl-star {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        .lvl-btn:hover {
+            border-color: var(--pink-300);
+            background: var(--pink-50);
+            transform: translateY(-2px);
+        }
+        
+        .lvl-btn.active {
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-500));
+            border-color: var(--pink-500);
+            color: white;
+            box-shadow: 0 4px 14px rgba(235, 47, 150, 0.35);
+            transform: translateY(-2px);
+        }
+        /* LEVEL INTRO */
+        
+        .level-intro {
+            background: white;
+            border: 2px solid var(--pink-100);
+            border-radius: var(--radius);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: fadeUp 0.5s ease both;
+        }
+        
+        .intro-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        
+        .intro-text h3 {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        
+        .intro-text p {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+        /* STATS ROW */
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 1.25rem;
+            animation: fadeUp 0.6s 0.15s ease both;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 2px solid var(--pink-100);
+            border-radius: var(--radius-sm);
+            padding: 12px 8px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .stat-card .val {
+            font-family: 'Fredoka One', cursive;
+            font-size: 24px;
+            color: var(--pink-500);
+            line-height: 1;
+        }
+        
+        .stat-card .lbl {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+        
+        .hearts-display {
+            font-size: 18px;
+            line-height: 1;
+        }
+        /* PROGRESS */
+        
+        .progress-wrap {
+            margin-bottom: 1.25rem;
+            animation: fadeUp 0.6s 0.2s ease both;
+        }
+        
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+        
+        .progress-track {
+            height: 8px;
+            background: var(--pink-100);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--pink-300), var(--pink-500));
+            border-radius: 4px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* QUESTION CARD */
+        
+        .question-card {
+            background: white;
+            border: 2px solid var(--pink-100);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-pink);
+            animation: fadeUp 0.5s ease both;
+        }
+        
+        .q-type-badge {
+            display: inline-block;
+            background: var(--pink-50);
+            border: 1.5px solid var(--pink-200);
+            color: var(--pink-500);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .q-text {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        
+        .q-hint {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+            padding: 8px 12px;
+            background: var(--pink-50);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--pink-300);
+        }
+        /* OPTIONS */
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .opt-btn {
+            padding: 12px 14px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--pink-100);
+            background: var(--cream);
+            color: var(--text-dark);
+            font-family: 'Nunito', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: left;
+            line-height: 1.4;
+            transition: all 0.18s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .opt-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--pink-100), transparent);
+            opacity: 0;
+            transition: opacity 0.18s;
+        }
+        
+        .opt-btn:hover:not(:disabled) {
+            border-color: var(--pink-300);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(235, 47, 150, 0.15);
+        }
+        
+        .opt-btn:hover:not(:disabled)::before {
+            opacity: 1;
+        }
+        
+        .opt-btn.correct {
+            background: #f0fff4;
+            border-color: #52c41a;
+            color: #135200;
+        }
+        
+        .opt-btn.wrong {
+            background: #fff1f0;
+            border-color: #ff4d4f;
+            color: #5c0011;
+        }
+        
+        .opt-btn:disabled {
+            cursor: default;
+        }
+        /* FEEDBACK */
+        
+        .feedback-box {
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-size: 13.5px;
+            font-weight: 600;
+            line-height: 1.6;
+            display: none;
+            margin-bottom: 1rem;
+        }
+        
+        .feedback-box.correct {
+            background: #f6ffed;
+            border: 1.5px solid #b7eb8f;
+            color: #135200;
+        }
+        
+        .feedback-box.wrong {
+            background: #fff1f0;
+            border: 1.5px solid #ffa39e;
+            color: #5c0011;
+        }
+        /* NEXT BUTTON */
+        
+        .next-btn {
+            display: none;
+            width: 100%;
+            padding: 13px;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-600));
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(235, 47, 150, 0.35);
+        }
+        
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(235, 47, 150, 0.45);
+        }
+        /* RESULT SCREEN */
+        
+        .result-screen {
+            display: none;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            animation: fadeUp 0.5s ease both;
+        }
+        
+        .result-emoji {
+            font-size: 64px;
+            margin-bottom: 1rem;
+        }
+        
+        .result-score-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-300), var(--pink-500));
+            color: white;
+            font-family: 'Fredoka One', cursive;
+            font-size: 42px;
+            padding: 12px 36px;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            box-shadow: 0 6px 24px rgba(235, 47, 150, 0.35);
+        }
+        
+        .result-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 26px;
+            color: var(--pink-600);
+            margin-bottom: 8px;
+        }
+        
+        .result-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-width: 380px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .result-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-outline {
+            padding: 11px 22px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--pink-300);
+            background: white;
+            color: var(--pink-500);
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-outline:hover {
+            background: var(--pink-50);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            padding: 11px 22px;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-600));
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(235, 47, 150, 0.35);
+            transition: all 0.2s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(235, 47, 150, 0.45);
+        }
+        /* ===== VOCAB SECTION ===== */
+        
+        #vocabPage {
+            display: none;
+            animation: fadeUp 0.5s ease both;
+        }
+        
+        .vocab-search-wrap {
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+        
+        .vocab-search {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--pink-200);
+            background: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border 0.2s;
+        }
+        
+        .vocab-search:focus {
+            border-color: var(--pink-400);
+            box-shadow: 0 0 0 3px rgba(235, 47, 150, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+        }
+        
+        .vocab-category-tabs {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+        
+        .cat-tab {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 2px solid var(--pink-100);
+            background: white;
+            color: var(--text-mid);
+            font-family: 'Nunito', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .cat-tab:hover {
+            border-color: var(--pink-300);
+            background: var(--pink-50);
+        }
+        
+        .cat-tab.active {
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-500));
+            border-color: var(--pink-500);
+            color: white;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .vocab-card {
+            background: white;
+            border: 2px solid var(--pink-100);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .vocab-card:hover {
+            border-color: var(--pink-300);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-pink);
+        }
+        
+        .vocab-card.expanded {
+            border-color: var(--pink-400);
+            background: var(--pink-50);
+        }
+        
+        .vocab-en {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        
+        .vocab-id {
+            font-size: 13px;
+            color: var(--pink-500);
+            font-weight: 700;
+            margin-top: 2px;
+        }
+        
+        .vocab-cat-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-light);
+            background: var(--pink-100);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 4px;
+        }
+        
+        .vocab-detail {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid var(--pink-100);
+            padding-top: 10px;
+        }
+        
+        .vocab-card.expanded .vocab-detail {
+            display: block;
+        }
+        
+        .vocab-example {
+            font-size: 12px;
+            color: var(--text-mid);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 4px;
+        }
+        
+        .vocab-translation {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        .vocab-empty {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 14px;
+            grid-column: 1/-1;
+        }
+        /* ===== PAST TENSE SECTION ===== */
+        
+        #tensePage {
+            display: none;
+            animation: fadeUp 0.5s ease both;
+        }
+        
+        .tense-hero {
+            background: linear-gradient(135deg, var(--pink-400), var(--pink-600));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .tense-hero h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+        
+        .tense-hero p {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .tense-section {
+            background: white;
+            border: 2px solid var(--pink-100);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-card);
+        }
+        
+        .tense-section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .tense-icon {
+            font-size: 24px;
+        }
+        
+        .tense-section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 18px;
+            color: var(--pink-600);
+        }
+        
+        .tense-section-sub {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 1px;
+        }
+        
+        .formula-box {
+            background: var(--pink-50);
+            border: 1.5px solid var(--pink-200);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 12px;
+        }
+        
+        .formula-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--pink-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .formula-text {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-family: monospace;
+        }
+        
+        .tense-examples {
+            list-style: none;
+        }
+        
+        .tense-examples li {
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 7px 0;
+            border-bottom: 1px solid var(--pink-50);
+            line-height: 1.6;
+        }
+        
+        .tense-examples li:last-child {
+            border-bottom: none;
+        }
+        
+        .tense-examples li .en {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .tense-examples li .id {
+            color: var(--text-light);
+            font-size: 12px;
+        }
+        
+        .verb-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+        
+        .verb-table th {
+            background: var(--pink-100);
+            color: var(--text-mid);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        
+        .verb-table td {
+            padding: 8px 10px;
+            font-size: 13px;
+            border-bottom: 1px solid var(--pink-50);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .verb-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .verb-table tr:nth-child(even) td {
+            background: var(--pink-50);
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #fff0f6, #ffd6e8);
+            border: 1.5px solid var(--pink-200);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-top: 10px;
+        }
+        
+        .tip-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--pink-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        
+        .tip-text {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+        /* DECO */
+        
+        .deco-dots {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--pink-200);
+            opacity: 0.4;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .dot:nth-child(1) {
+            width: 8px;
+            height: 8px;
+            top: 12%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+        
+        .dot:nth-child(2) {
+            width: 5px;
+            height: 5px;
+            top: 30%;
+            left: 92%;
+            animation-delay: 1s;
+        }
+        
+        .dot:nth-child(3) {
+            width: 10px;
+            height: 10px;
+            top: 65%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+        
+        .dot:nth-child(4) {
+            width: 6px;
+            height: 6px;
+            top: 80%;
+            left: 88%;
+            animation-delay: 0.5s;
+        }
+        
+        .dot:nth-child(5) {
+            width: 7px;
+            height: 7px;
+            top: 45%;
+            left: 95%;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+        
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.06);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .pop {
+            animation: pop 0.3s ease;
+        }
+        
+        @media(max-width:480px) {
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .level-selector {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+            .result-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-tab {
+                font-size: 11px;
+                padding: 8px 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="deco-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-badge">🌸 Learn English</div>
+            <h1>English <span>Quest</span></h1>
+            <p>Belajar bahasa Inggris dengan cara yang menyenangkan!</p>
+        </div>
+
+        <!-- NAV TABS -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showPage('quiz')">🎮 Quiz</button>
+            <button class="nav-tab" onclick="showPage('vocab')">📖 Kamus Vocab</button>
+            <button class="nav-tab" onclick="showPage('tense')">⏰ Past Tense</button>
+        </div>
+
+        <!-- ===== QUIZ PAGE ===== -->
+        <div id="quizPage">
+            <div class="level-selector" id="levelBar">
+                <button class="lvl-btn active" onclick="selectLevel(0)"><span class="lvl-star">⭐</span>Beginner</button>
+                <button class="lvl-btn" onclick="selectLevel(1)"><span class="lvl-star">⭐⭐</span>Elementary</button>
+                <button class="lvl-btn" onclick="selectLevel(2)"><span class="lvl-star">⭐⭐⭐</span>Intermediate</button>
+                <button class="lvl-btn" onclick="selectLevel(3)"><span class="lvl-star">⭐⭐⭐⭐</span>Advanced</button>
+            </div>
+
+            <div id="gameArea">
+                <div class="level-intro" id="levelIntro">
+                    <div class="intro-icon" id="introIcon">🌱</div>
+                    <div class="intro-text">
+                        <h3 id="introTitle">Level Beginner</h3>
+                        <p id="introDesc">Kosakata dasar, angka, warna, dan sapaan sederhana.</p>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="val" id="scoreVal">0</div>
+                        <div class="lbl">Skor</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="hearts-display" id="livesDisplay">❤️❤️❤️</div>
+                        <div class="lbl">Nyawa</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="val" id="streakVal">0🔥</div>
+                        <div class="lbl">Streak</div>
+                    </div>
+                </div>
+                <div class="progress-wrap">
+                    <div class="progress-meta">
+                        <span id="qCounter">Soal 1 dari 10</span>
+                        <span id="pctText">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+                    </div>
+                </div>
+                <div class="question-card" id="questionCard">
+                    <div class="q-type-badge" id="qTypeBadge">Vocabulary</div>
+                    <div class="q-text" id="qText">Memuat soal...</div>
+                    <div class="q-hint" id="qHint"></div>
+                    <div class="options-grid" id="optionsGrid"></div>
+                    <div class="feedback-box" id="feedbackBox"></div>
+                    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Lanjut →</button>
+                </div>
+            </div>
+
+            <div class="result-screen" id="resultScreen">
+                <div class="result-emoji" id="resultEmoji">🏆</div>
+                <div class="result-score-badge" id="resultScore">0 pts</div>
+                <div class="result-title" id="resultTitle">Selesai!</div>
+                <div class="result-desc" id="resultDesc"></div>
+                <div class="result-actions">
+                    <button class="btn-outline" onclick="restartSameLevel()">🔄 Ulangi</button>
+                    <button class="btn-primary" id="nextLevelBtn" onclick="goNextLevel()">Level Berikutnya 🌸</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== VOCAB PAGE ===== -->
+        <div id="vocabPage">
+            <div class="vocab-search-wrap">
+                <span class="search-icon">🔍</span>
+                <input class="vocab-search" id="vocabSearch" type="text" placeholder="Cari kata dalam bahasa Inggris atau Indonesia..." oninput="filterVocab()">
+            </div>
+            <div class="vocab-category-tabs" id="catTabs"></div>
+            <div class="vocab-grid" id="vocabGrid"></div>
+        </div>
+
+        <!-- ===== PAST TENSE PAGE ===== -->
+        <div id="tensePage">
+            <div class="tense-hero">
+                <h2>⏰ Past Tense</h2>
+                <p>Pelajari cara berbicara tentang kejadian di masa lalu dalam bahasa Inggris dengan mudah dan menyenangkan!</p>
+            </div>
+
+            <!-- Simple Past -->
+            <div class="tense-section">
+                <div class="tense-section-header">
+                    <div class="tense-icon">📅</div>
+                    <div>
+                        <div class="tense-section-title">Simple Past Tense</div>
+                        <div class="tense-section-sub">Kejadian yang sudah selesai di masa lalu</div>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Rumus Positif</div>
+                    <div class="formula-text">Subject + Verb 2 (past form)</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Rumus Negatif</div>
+                    <div class="formula-text">Subject + did not (didn't) + Verb 1</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Rumus Tanya</div>
+                    <div class="formula-text">Did + Subject + Verb 1?</div>
+                </div>
+                <ul class="tense-examples">
+                    <li><span class="en">She visited Paris last summer.</span><br><span class="id">Dia mengunjungi Paris musim panas lalu.</span></li>
+                    <li><span class="en">They didn't go to the party.</span><br><span class="id">Mereka tidak pergi ke pesta.</span></li>
+                    <li><span class="en">Did you eat breakfast this morning?</span><br><span class="id">Apakah kamu sarapan pagi ini?</span></li>
+                    <li><span class="en">I studied English yesterday.</span><br><span class="id">Saya belajar bahasa Inggris kemarin.</span></li>
+                </ul>
+                <div class="tip-box">
+                    <div class="tip-label">💡 Kata Kunci Waktu</div>
+                    <div class="tip-text">yesterday, last week/month/year, ago, in 2020, this morning, just now</div>
+                </div>
+            </div>
+
+            <!-- Irregular Verbs -->
+            <div class="tense-section">
+                <div class="tense-section-header">
+                    <div class="tense-icon">📚</div>
+                    <div>
+                        <div class="tense-section-title">Kata Kerja Tidak Beraturan (Irregular Verbs)</div>
+                        <div class="tense-section-sub">Harus dihafal karena tidak mengikuti aturan + -ed</div>
+                    </div>
+                </div>
+                <table class="verb-table">
+                    <tr>
+                        <th>Verb 1 (Now)</th>
+                        <th>Verb 2 (Past)</th>
+                        <th>Arti</th>
+                    </tr>
+                    <tr>
+                        <td>go</td>
+                        <td>went</td>
+                        <td>pergi</td>
+                    </tr>
+                    <tr>
+                        <td>eat</td>
+                        <td>ate</td>
+                        <td>makan</td>
+                    </tr>
+                    <tr>
+                        <td>see</td>
+                        <td>saw</td>
+                        <td>melihat</td>
+                    </tr>
+                    <tr>
+                        <td>buy</td>
+                        <td>bought</td>
+                        <td>membeli</td>
+                    </tr>
+                    <tr>
+                        <td>come</td>
+                        <td>came</td>
+                        <td>datang</td>
+                    </tr>
+                    <tr>
+                        <td>take</td>
+                        <td>took</td>
+                        <td>mengambil</td>
+                    </tr>
+                    <tr>
+                        <td>give</td>
+                        <td>gave</td>
+                        <td>memberikan</td>
+                    </tr>
+                    <tr>
+                        <td>make</td>
+                        <td>made</td>
+                        <td>membuat</td>
+                    </tr>
+                    <tr>
+                        <td>think</td>
+                        <td>thought</td>
+                        <td>berpikir</td>
+                    </tr>
+                    <tr>
+                        <td>write</td>
+                        <td>wrote</td>
+                        <td>menulis</td>
+                    </tr>
+                    <tr>
+                        <td>speak</td>
+                        <td>spoke</td>
+                        <td>berbicara</td>
+                    </tr>
+                    <tr>
+                        <td>meet</td>
+                        <td>met</td>
+                        <td>bertemu</td>
+                    </tr>
+                    <tr>
+                        <td>run</td>
+                        <td>ran</td>
+                        <td>berlari</td>
+                    </tr>
+                    <tr>
+                        <td>know</td>
+                        <td>knew</td>
+                        <td>mengetahui</td>
+                    </tr>
+                    <tr>
+                        <td>find</td>
+                        <td>found</td>
+                        <td>menemukan</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Regular Verbs -->
+            <div class="tense-section">
+                <div class="tense-section-header">
+                    <div class="tense-icon">✏️</div>
+                    <div>
+                        <div class="tense-section-title">Kata Kerja Beraturan (Regular Verbs)</div>
+                        <div class="tense-section-sub">Cukup tambahkan -ed atau -d di akhir kata</div>
+                    </div>
+                </div>
+                <table class="verb-table">
+                    <tr>
+                        <th>Verb 1 (Now)</th>
+                        <th>Verb 2 (Past)</th>
+                        <th>Arti</th>
+                    </tr>
+                    <tr>
+                        <td>walk</td>
+                        <td>walked</td>
+                        <td>berjalan</td>
+                    </tr>
+                    <tr>
+                        <td>study</td>
+                        <td>studied</td>
+                        <td>belajar</td>
+                    </tr>
+                    <tr>
+                        <td>play</td>
+                        <td>played</td>
+                        <td>bermain</td>
+                    </tr>
+                    <tr>
+                        <td>cook</td>
+                        <td>cooked</td>
+                        <td>memasak</td>
+                    </tr>
+                    <tr>
+                        <td>watch</td>
+                        <td>watched</td>
+                        <td>menonton</td>
+                    </tr>
+                    <tr>
+                        <td>call</td>
+                        <td>called</td>
+                        <td>menelepon</td>
+                    </tr>
+                    <tr>
+                        <td>listen</td>
+                        <td>listened</td>
+                        <td>mendengarkan</td>
+                    </tr>
+                    <tr>
+                        <td>visit</td>
+                        <td>visited</td>
+                        <td>mengunjungi</td>
+                    </tr>
+                    <tr>
+                        <td>love</td>
+                        <td>loved</td>
+                        <td>mencintai</td>
+                    </tr>
+                    <tr>
+                        <td>help</td>
+                        <td>helped</td>
+                        <td>membantu</td>
+                    </tr>
+                </table>
+                <div class="tip-box">
+                    <div class="tip-label">💡 Aturan Penulisan</div>
+                    <div class="tip-text">
+                        • Umumnya: + <strong>-ed</strong> (walk → walked)<br> • Berakhiran -e: + <strong>-d</strong> (love → loved)<br> • Berakhiran konsonan + y: ganti jadi <strong>-ied</strong> (study → studied)<br> • Konsonan tunggal setelah vokal:
+                        ganda + <strong>-ed</strong> (stop → stopped)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Continuous -->
+            <div class="tense-section">
+                <div class="tense-section-header">
+                    <div class="tense-icon">⏳</div>
+                    <div>
+                        <div class="tense-section-title">Past Continuous Tense</div>
+                        <div class="tense-section-sub">Kejadian yang sedang berlangsung di masa lalu</div>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Rumus</div>
+                    <div class="formula-text">Subject + was/were + Verb-ing</div>
+                </div>
+                <ul class="tense-examples">
+                    <li><span class="en">I was sleeping when the phone rang.</span><br><span class="id">Saya sedang tidur ketika telepon berdering.</span></li>
+                    <li><span class="en">They were watching TV all evening.</span><br><span class="id">Mereka sedang menonton TV sepanjang malam.</span></li>
+                    <li><span class="en">She was cooking dinner at 7 PM.</span><br><span class="id">Dia sedang memasak makan malam pada pukul 7.</span></li>
+                </ul>
+                <div class="tip-box">
+                    <div class="tip-label">💡 was vs were</div>
+                    <div class="tip-text">
+                        <strong>was</strong> → I, he, she, it &nbsp;|&nbsp; <strong>were</strong> → you, we, they
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Perfect -->
+            <div class="tense-section">
+                <div class="tense-section-header">
+                    <div class="tense-icon">⌛</div>
+                    <div>
+                        <div class="tense-section-title">Past Perfect Tense</div>
+                        <div class="tense-section-sub">Kejadian yang terjadi sebelum kejadian lain di masa lalu</div>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Rumus</div>
+                    <div class="formula-text">Subject + had + Verb 3 (past participle)</div>
+                </div>
+                <ul class="tense-examples">
+                    <li><span class="en">She had already eaten when he arrived.</span><br><span class="id">Dia sudah makan ketika dia tiba.</span></li>
+                    <li><span class="en">I had never seen snow before I went to Europe.</span><br><span class="id">Saya belum pernah melihat salju sebelum pergi ke Eropa.</span></li>
+                    <li><span class="en">They had finished the project before the deadline.</span><br><span class="id">Mereka telah menyelesaikan proyek sebelum batas waktu.</span></li>
+                </ul>
+            </div>
+
+            <div style="text-align:center;margin-top:1.5rem;">
+                <button class="btn-primary" onclick="showPage('quiz');selectLevel(1)">🎮 Coba Quiz Past Tense!</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- /container -->
+
+    <script>
+        /* ========== VOCAB DATA ========== */
+        const VOCAB = [
+            // Everyday Life
+            {
+                en: "Breakfast",
+                id: "Sarapan",
+                cat: "Kehidupan Sehari-hari",
+                ex: "I eat breakfast every morning at 7 AM.",
+                exid: "Saya sarapan setiap pagi jam 7."
+            }, {
+                en: "Dinner",
+                id: "Makan malam",
+                cat: "Kehidupan Sehari-hari",
+                ex: "We had dinner together last night.",
+                exid: "Kami makan malam bersama semalam."
+            }, {
+                en: "Sleep",
+                id: "Tidur",
+                cat: "Kehidupan Sehari-hari",
+                ex: "I usually sleep at 10 PM.",
+                exid: "Saya biasanya tidur jam 10 malam."
+            }, {
+                en: "Work",
+                id: "Bekerja / Pekerjaan",
+                cat: "Kehidupan Sehari-hari",
+                ex: "She works at a hospital.",
+                exid: "Dia bekerja di rumah sakit."
+            }, {
+                en: "School",
+                id: "Sekolah",
+                cat: "Kehidupan Sehari-hari",
+                ex: "The school starts at 7 in the morning.",
+                exid: "Sekolah dimulai jam 7 pagi."
+            }, {
+                en: "Market",
+                id: "Pasar",
+                cat: "Kehidupan Sehari-hari",
+                ex: "My mother went to the market this morning.",
+                exid: "Ibu saya pergi ke pasar pagi ini."
+            }, {
+                en: "Friend",
+                id: "Teman",
+                cat: "Kehidupan Sehari-hari",
+                ex: "She is my best friend.",
+                exid: "Dia adalah sahabat terbaik saya."
+            }, {
+                en: "Family",
+                id: "Keluarga",
+                cat: "Kehidupan Sehari-hari",
+                ex: "Family is the most important thing in life.",
+                exid: "Keluarga adalah hal terpenting dalam hidup."
+            }, {
+                en: "House",
+                id: "Rumah",
+                cat: "Kehidupan Sehari-hari",
+                ex: "This is my new house.",
+                exid: "Ini adalah rumah baru saya."
+            }, {
+                en: "Money",
+                id: "Uang",
+                cat: "Kehidupan Sehari-hari",
+                ex: "He saved money for a new phone.",
+                exid: "Dia menabung uang untuk beli ponsel baru."
+            },
+
+            // Nature
+            {
+                en: "Ocean",
+                id: "Samudra / Lautan",
+                cat: "Alam",
+                ex: "The ocean is vast and mysterious.",
+                exid: "Samudra sangat luas dan misterius."
+            }, {
+                en: "Mountain",
+                id: "Gunung",
+                cat: "Alam",
+                ex: "We hiked up the mountain last weekend.",
+                exid: "Kami mendaki gunung akhir pekan lalu."
+            }, {
+                en: "Forest",
+                id: "Hutan",
+                cat: "Alam",
+                ex: "Many animals live in the forest.",
+                exid: "Banyak hewan hidup di hutan."
+            }, {
+                en: "Rain",
+                id: "Hujan",
+                cat: "Alam",
+                ex: "The rain fell heavily last night.",
+                exid: "Hujan turun deras semalam."
+            }, {
+                en: "Flower",
+                id: "Bunga",
+                cat: "Alam",
+                ex: "She planted beautiful flowers in the garden.",
+                exid: "Dia menanam bunga cantik di taman."
+            }, {
+                en: "Tree",
+                id: "Pohon",
+                cat: "Alam",
+                ex: "The tree gives shade on hot days.",
+                exid: "Pohon memberikan keteduhan di hari panas."
+            }, {
+                en: "River",
+                id: "Sungai",
+                cat: "Alam",
+                ex: "Children played by the river.",
+                exid: "Anak-anak bermain di tepi sungai."
+            }, {
+                en: "Sky",
+                id: "Langit",
+                cat: "Alam",
+                ex: "The sky was clear and blue today.",
+                exid: "Langit cerah dan biru hari ini."
+            },
+
+            // Emotions
+            {
+                en: "Happy",
+                id: "Bahagia / Senang",
+                cat: "Emosi",
+                ex: "She felt happy when she heard the news.",
+                exid: "Dia merasa bahagia saat mendengar kabar itu."
+            }, {
+                en: "Sad",
+                id: "Sedih",
+                cat: "Emosi",
+                ex: "He was sad when his dog ran away.",
+                exid: "Dia sedih saat anjingnya kabur."
+            }, {
+                en: "Angry",
+                id: "Marah",
+                cat: "Emosi",
+                ex: "She got angry because she was late.",
+                exid: "Dia marah karena terlambat."
+            }, {
+                en: "Afraid",
+                id: "Takut",
+                cat: "Emosi",
+                ex: "The child was afraid of the dark.",
+                exid: "Anak itu takut gelap."
+            }, {
+                en: "Excited",
+                id: "Antusias / Bersemangat",
+                cat: "Emosi",
+                ex: "The students were excited about the field trip.",
+                exid: "Para siswa bersemangat tentang perjalanan lapangan."
+            }, {
+                en: "Lonely",
+                id: "Kesepian",
+                cat: "Emosi",
+                ex: "She felt lonely living far from family.",
+                exid: "Dia merasa kesepian tinggal jauh dari keluarga."
+            }, {
+                en: "Proud",
+                id: "Bangga",
+                cat: "Emosi",
+                ex: "His parents were proud of his achievement.",
+                exid: "Orang tuanya bangga dengan prestasinya."
+            }, {
+                en: "Nervous",
+                id: "Gugup",
+                cat: "Emosi",
+                ex: "He was nervous before the presentation.",
+                exid: "Dia gugup sebelum presentasi."
+            },
+
+            // Academic
+            {
+                en: "Knowledge",
+                id: "Pengetahuan",
+                cat: "Akademik",
+                ex: "Reading books expands your knowledge.",
+                exid: "Membaca buku memperluas pengetahuanmu."
+            }, {
+                en: "Research",
+                id: "Penelitian",
+                cat: "Akademik",
+                ex: "She conducted research on climate change.",
+                exid: "Dia melakukan penelitian tentang perubahan iklim."
+            }, {
+                en: "Theory",
+                id: "Teori",
+                cat: "Akademik",
+                ex: "Einstein's theory changed science forever.",
+                exid: "Teori Einstein mengubah ilmu pengetahuan selamanya."
+            }, {
+                en: "Practice",
+                id: "Latihan / Praktek",
+                cat: "Akademik",
+                ex: "Practice makes perfect.",
+                exid: "Latihan membuat sempurna."
+            }, {
+                en: "Analyze",
+                id: "Menganalisis",
+                cat: "Akademik",
+                ex: "We need to analyze the data carefully.",
+                exid: "Kita perlu menganalisis data dengan cermat."
+            }, {
+                en: "Conclude",
+                id: "Menyimpulkan",
+                cat: "Akademik",
+                ex: "The scientist concluded her experiment.",
+                exid: "Ilmuwan itu menyimpulkan eksperimennya."
+            }, {
+                en: "Significant",
+                id: "Signifikan / Penting",
+                cat: "Akademik",
+                ex: "The discovery was significant for medicine.",
+                exid: "Penemuan itu penting bagi dunia kedokteran."
+            },
+
+            // Technology
+            {
+                en: "Device",
+                id: "Perangkat",
+                cat: "Teknologi",
+                ex: "This device connects to the internet.",
+                exid: "Perangkat ini terhubung ke internet."
+            }, {
+                en: "Software",
+                id: "Perangkat lunak",
+                cat: "Teknologi",
+                ex: "The software update fixed the bugs.",
+                exid: "Pembaruan perangkat lunak memperbaiki bug."
+            }, {
+                en: "Download",
+                id: "Mengunduh",
+                cat: "Teknologi",
+                ex: "Please download the app from the store.",
+                exid: "Silakan unduh aplikasinya dari toko."
+            }, {
+                en: "Network",
+                id: "Jaringan",
+                cat: "Teknologi",
+                ex: "The network connection was slow today.",
+                exid: "Koneksi jaringan lambat hari ini."
+            }, {
+                en: "Password",
+                id: "Kata sandi",
+                cat: "Teknologi",
+                ex: "Never share your password with others.",
+                exid: "Jangan bagikan kata sandimu dengan orang lain."
+            }, {
+                en: "Digital",
+                id: "Digital",
+                cat: "Teknologi",
+                ex: "We live in a digital age.",
+                exid: "Kita hidup di era digital."
+            },
+
+            // Food
+            {
+                en: "Delicious",
+                id: "Lezat / Enak",
+                cat: "Makanan",
+                ex: "The food was absolutely delicious.",
+                exid: "Makanannya sungguh lezat."
+            }, {
+                en: "Recipe",
+                id: "Resep",
+                cat: "Makanan",
+                ex: "My grandmother shared her secret recipe.",
+                exid: "Nenek saya berbagi resep rahasianya."
+            }, {
+                en: "Vegetable",
+                id: "Sayuran",
+                cat: "Makanan",
+                ex: "Eat more vegetables to stay healthy.",
+                exid: "Makan lebih banyak sayuran agar tetap sehat."
+            }, {
+                en: "Fruit",
+                id: "Buah",
+                cat: "Makanan",
+                ex: "Tropical fruit is very popular in Indonesia.",
+                exid: "Buah tropis sangat populer di Indonesia."
+            }, {
+                en: "Spicy",
+                id: "Pedas",
+                cat: "Makanan",
+                ex: "Indonesian food is often spicy.",
+                exid: "Makanan Indonesia sering pedas."
+            }, {
+                en: "Sweet",
+                id: "Manis",
+                cat: "Makanan",
+                ex: "This cake is very sweet.",
+                exid: "Kue ini sangat manis."
+            },
+        ];
+
+        /* ========== QUIZ DATA ========== */
+        const LEVELS = [{
+            name: "Beginner",
+            icon: "🌱",
+            desc: "Kosakata dasar, angka, warna, sapaan, dan Past Tense sederhana.",
+            questions: [{
+                type: "Vocabulary",
+                q: "Apa arti kata 'Apple'?",
+                hint: "🍎 Ini adalah buah merah",
+                opts: ["Pisang", "Mangga", "Apel", "Jeruk"],
+                ans: 2,
+                exp: "'Apple' artinya Apel."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Dog'?",
+                hint: "🐶 Hewan peliharaan yang setia",
+                opts: ["Kucing", "Anjing", "Kelinci", "Ikan"],
+                ans: 1,
+                exp: "'Dog' artinya Anjing."
+            }, {
+                type: "Numbers",
+                q: "Angka 3 dalam bahasa Inggris adalah?",
+                hint: "🔢 Angka setelah dua",
+                opts: ["One", "Two", "Three", "Four"],
+                ans: 2,
+                exp: "Angka 3 adalah 'Three'."
+            }, {
+                type: "Colors",
+                q: "Apa arti warna 'Red'?",
+                hint: "🔴 Warna darah dan stroberi",
+                opts: ["Biru", "Hijau", "Merah", "Kuning"],
+                ans: 2,
+                exp: "'Red' artinya Merah."
+            }, {
+                type: "Greeting",
+                q: "Apa arti 'Good Morning'?",
+                hint: "🌅 Diucapkan saat pagi hari",
+                opts: ["Selamat malam", "Selamat sore", "Selamat pagi", "Selamat makan"],
+                ans: 2,
+                exp: "'Good Morning' artinya Selamat Pagi."
+            }, {
+                type: "Vocabulary",
+                q: "Bahasa Inggris dari 'Buku' adalah?",
+                hint: "📚 Digunakan untuk belajar",
+                opts: ["Pen", "Book", "Chair", "Table"],
+                ans: 1,
+                exp: "'Buku' adalah 'Book'."
+            }, {
+                type: "Past Tense",
+                q: "'Yesterday, I ___ to school.' (Saya pergi ke sekolah kemarin)",
+                hint: "⏰ Ini terjadi kemarin — masa lalu",
+                opts: ["go", "goes", "went", "going"],
+                ans: 2,
+                exp: "Simple Past dari 'go' adalah 'went'. Digunakan untuk kejadian di masa lalu."
+            }, {
+                type: "Past Tense",
+                q: "Apa bentuk Past Tense dari kata 'eat'?",
+                hint: "🍽️ Saya makan nasi kemarin",
+                opts: ["eated", "eats", "eating", "ate"],
+                ans: 3,
+                exp: "'Eat' adalah irregular verb. Bentuk Past Tense-nya adalah 'ate'."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti 'Water'?",
+                hint: "💧 Kita minum ini setiap hari",
+                opts: ["Susu", "Jus", "Air", "Teh"],
+                ans: 2,
+                exp: "'Water' artinya Air."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti 'Happy'?",
+                hint: "😊 Perasaan saat mendapat hadiah",
+                opts: ["Sedih", "Marah", "Bahagia", "Takut"],
+                ans: 2,
+                exp: "'Happy' artinya Bahagia atau Senang."
+            }, ]
+        }, {
+            name: "Elementary",
+            icon: "🌿",
+            desc: "Kalimat sederhana, kata kerja dasar, dan Past Tense regular & irregular.",
+            questions: [{
+                type: "Grammar",
+                q: "Pilih kalimat yang benar:",
+                hint: "💬 Perhatikan subjek she/he/it",
+                opts: ["She go to school", "She goes to school", "She going to school", "She goed to school"],
+                ans: 1,
+                exp: "Untuk she/he/it, kata kerja ditambah -s menjadi 'goes'."
+            }, {
+                type: "Past Tense",
+                q: "Bentuk Past Tense dari 'walk' adalah?",
+                hint: "🚶 Regular verb — tinggal tambah -ed",
+                opts: ["walkes", "walking", "walked", "wolk"],
+                ans: 2,
+                exp: "'Walk' adalah regular verb. Bentuk pastnya: walk + ed = 'walked'."
+            }, {
+                type: "Past Tense",
+                q: "'She ___ a letter to her friend.' (Dia menulis surat kemarin)",
+                hint: "✉️ Kejadian di masa lalu",
+                opts: ["write", "writes", "written", "wrote"],
+                ans: 3,
+                exp: "'Write' adalah irregular verb. Bentuk Past Tense-nya adalah 'wrote'."
+            }, {
+                type: "Fill-in",
+                q: "'I ___ a student.' (Saya adalah seorang pelajar)",
+                hint: "🧑‍🎓 Kata kerja to be untuk I",
+                opts: ["is", "am", "are", "be"],
+                ans: 1,
+                exp: "Untuk 'I', kata kerja to be adalah 'am'."
+            }, {
+                type: "Past Tense",
+                q: "'They ___ soccer in the park yesterday.'",
+                hint: "⚽ Kemarin → past tense",
+                opts: ["play", "plays", "played", "playing"],
+                ans: 2,
+                exp: "Regular verb: play + ed = 'played'. Untuk kalimat past tense."
+            }, {
+                type: "Past Tense",
+                q: "Mana kalimat Simple Past yang benar?",
+                hint: "📅 Terjadi minggu lalu",
+                opts: ["He buyed a new car", "He buys a new car", "He bought a new car", "He buying a new car"],
+                ans: 2,
+                exp: "'Buy' adalah irregular verb. Bentuk pastnya adalah 'bought'."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Excited'?",
+                hint: "🎉 Perasaan sangat senang dan bersemangat",
+                opts: ["Sedih", "Marah", "Takut", "Bersemangat"],
+                ans: 3,
+                exp: "'Excited' artinya Antusias atau Bersemangat."
+            }, {
+                type: "Past Tense",
+                q: "'I didn't ___ to school yesterday.' (Negatif past tense)",
+                hint: "🚫 Setelah did not, gunakan verb bentuk dasar",
+                opts: ["went", "go", "goes", "going"],
+                ans: 1,
+                exp: "Setelah 'didn't', selalu gunakan Verb 1 (bentuk dasar): 'go'."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti 'Delicious'?",
+                hint: "😋 Digunakan untuk menggambarkan makanan yang sangat enak",
+                opts: ["Pahit", "Lezat", "Asin", "Hambar"],
+                ans: 1,
+                exp: "'Delicious' artinya Lezat atau Enak."
+            }, {
+                type: "Past Tense",
+                q: "'Did you ___ the movie last night?' (Tanya Past Tense)",
+                hint: "🎬 Pertanyaan dengan Did + Verb 1",
+                opts: ["watched", "watching", "watch", "watches"],
+                ans: 2,
+                exp: "Setelah 'Did', gunakan Verb 1 (bentuk dasar): 'watch'."
+            }, ]
+        }, {
+            name: "Intermediate",
+            icon: "🌺",
+            desc: "Tata bahasa menengah, idiom populer, Past Continuous & Past Perfect.",
+            questions: [{
+                type: "Past Continuous",
+                q: "'She ___ when I called her.' (Dia sedang tidur ketika saya menelepon)",
+                hint: "⏳ Sedang terjadi di masa lalu",
+                opts: ["slept", "sleep", "was sleeping", "were sleeping"],
+                ans: 2,
+                exp: "Past Continuous: was/were + Verb-ing. 'She was sleeping.'"
+            }, {
+                type: "Idiom",
+                q: "Apa arti idiom 'Break a leg'?",
+                hint: "🎭 Diucapkan sebelum penampilan",
+                opts: ["Patah kaki", "Semoga berhasil", "Cepat lari", "Beristirahat"],
+                ans: 1,
+                exp: "'Break a leg' berarti Semoga berhasil (Good luck)."
+            }, {
+                type: "Past Perfect",
+                q: "'I had already ___ dinner when she arrived.'",
+                hint: "⌛ Kejadian sebelum kejadian lain di masa lalu",
+                opts: ["eat", "ate", "eats", "eaten"],
+                ans: 3,
+                exp: "Past Perfect: had + Verb 3. 'eat' → Verb 3 = 'eaten'."
+            }, {
+                type: "Idiom",
+                q: "Apa arti 'It's raining cats and dogs'?",
+                hint: "🌧️ Tentang kondisi cuaca",
+                opts: ["Ada kucing & anjing", "Cuaca panas", "Hujan sangat lebat", "Akan badai"],
+                ans: 2,
+                exp: "Berarti hujan sangat lebat."
+            }, {
+                type: "Past Continuous",
+                q: "'They ___ TV when the electricity went out.'",
+                hint: "📺 Sedang berlangsung saat kejadian lain terjadi",
+                opts: ["watched", "were watching", "was watching", "are watching"],
+                ans: 1,
+                exp: "They = plural → 'were watching'. Past Continuous untuk kejadian yang sedang berlangsung."
+            }, {
+                type: "Past Perfect",
+                q: "Mana kalimat Past Perfect yang benar?",
+                hint: "⏳ had + Verb 3",
+                opts: ["She had left before he arrived", "She has left before he arrived", "She left before he had arrived", "She was left before he arrived"],
+                ans: 0,
+                exp: "Past Perfect: 'Had left' → terjadi sebelum 'arrived'."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Significant'?",
+                hint: "📊 Dipakai dalam konteks akademik atau ilmiah",
+                opts: ["Kecil", "Tidak penting", "Penting/Signifikan", "Sederhana"],
+                ans: 2,
+                exp: "'Significant' artinya Penting atau Signifikan."
+            }, {
+                type: "Grammar",
+                q: "'Neither of the students ___ the answer.'",
+                hint: "🤔 'Neither' adalah singular",
+                opts: ["know", "knows", "knowing", "known"],
+                ans: 1,
+                exp: "'Neither' dianggap singular, gunakan 'knows'."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Analyze'?",
+                hint: "🔬 Digunakan dalam konteks penelitian",
+                opts: ["Membuat", "Menganalisis", "Membeli", "Menghitung"],
+                ans: 1,
+                exp: "'Analyze' artinya Menganalisis — memeriksa sesuatu secara mendalam."
+            }, {
+                type: "Past Continuous",
+                q: "'What were you doing at 9 PM last night?'  Jawaban yang tepat adalah?",
+                hint: "💬 Sedang terjadi pada waktu tertentu di malam lalu",
+                opts: ["I was studying", "I studied", "I study", "I had studied"],
+                ans: 0,
+                exp: "Untuk menjawab 'what were you doing', gunakan 'was/were + Verb-ing'."
+            }, ]
+        }, {
+            name: "Advanced",
+            icon: "🌸",
+            desc: "Kosakata akademik, nuansa bahasa, dan penggunaan tingkat tinggi.",
+            questions: [{
+                type: "Vocabulary",
+                q: "Apa arti kata 'Ephemeral'?",
+                hint: "🌸 Sesuatu yang tidak bertahan lama",
+                opts: ["Abadi", "Bersifat sementara", "Sangat kuat", "Sangat besar"],
+                ans: 1,
+                exp: "'Ephemeral' berarti bersifat sementara (short-lived)."
+            }, {
+                type: "Grammar",
+                q: "Passive Voice dari: 'The company will launch the product.'",
+                hint: "📢 Future Passive",
+                opts: ["The product will be launch", "The product will be launched", "The product will launch", "The product is launched"],
+                ans: 1,
+                exp: "Future Passive: will + be + V3. launch → launched."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Ubiquitous'?",
+                hint: "🌍 Ditemukan di mana-mana",
+                opts: ["Langka", "Berbahaya", "Ada di mana-mana", "Tersembunyi"],
+                ans: 2,
+                exp: "'Ubiquitous' berarti ada di mana-mana (omnipresent)."
+            }, {
+                type: "Grammar",
+                q: "'Scarcely ___ she sat down when the phone rang.'",
+                hint: "🔄 Inversi setelah adverb negatif",
+                opts: ["had", "has", "did", "was"],
+                ans: 0,
+                exp: "Setelah 'scarcely', gunakan inversi: 'had she sat'."
+            }, {
+                type: "Usage",
+                q: "Apa perbedaan 'Affect' dan 'Effect'?",
+                hint: "📝 Keduanya berkaitan dengan pengaruh",
+                opts: ["Keduanya sama", "Affect = kata kerja, Effect = kata benda", "Affect = kata benda, Effect = kata kerja", "Keduanya kata benda"],
+                ans: 1,
+                exp: "Affect (v) = mempengaruhi. Effect (n) = hasil/dampak."
+            }, {
+                type: "Rhetoric",
+                q: "'The stars danced in the night sky' menggunakan gaya bahasa?",
+                hint: "✨ Benda mati diberi sifat manusia",
+                opts: ["Simile", "Metaphor", "Personification", "Hyperbole"],
+                ans: 2,
+                exp: "Personifikasi memberikan sifat manusia pada benda mati."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Pragmatic'?",
+                hint: "🛠️ Fokus pada hasil nyata",
+                opts: ["Idealis", "Praktis & realistis", "Emosional", "Perfeksionis"],
+                ans: 1,
+                exp: "'Pragmatic' berarti praktis dan realistis."
+            }, {
+                type: "Vocabulary",
+                q: "Apa arti kata 'Ambiguous'?",
+                hint: "❓ Tidak jelas atau bisa diartikan dua cara",
+                opts: ["Sangat jelas", "Bermakna ganda", "Sederhana", "Mengesankan"],
+                ans: 1,
+                exp: "'Ambiguous' artinya bermakna ganda atau tidak jelas."
+            }, {
+                type: "Grammar",
+                q: "'Had I known about it, I ___ attended.' (Third Conditional)",
+                hint: "💭 Penyesalan di masa lalu",
+                opts: ["will have", "would have", "would", "will"],
+                ans: 1,
+                exp: "Third Conditional: Would + have + V3."
+            }, {
+                type: "Rhetoric",
+                q: "'I've told you a million times!' termasuk gaya bahasa?",
+                hint: "📣 Melebih-lebihkan",
+                opts: ["Understatement", "Litotes", "Hyperbole", "Irony"],
+                ans: 2,
+                exp: "Hyperbole melebih-lebihkan sesuatu untuk efek dramatis."
+            }, ]
+        }];
+
+        /* ========== PAGE NAVIGATION ========== */
+        function showPage(page) {
+            document.querySelectorAll('.nav-tab').forEach((t, i) => {
+                t.classList.toggle('active', ['quiz', 'vocab', 'tense'][i] === page);
+            });
+            document.getElementById('quizPage').style.display = page === 'quiz' ? 'block' : 'none';
+            document.getElementById('vocabPage').style.display = page === 'vocab' ? 'block' : 'none';
+            document.getElementById('tensePage').style.display = page === 'tense' ? 'block' : 'none';
+            if (page === 'vocab') initVocab();
+        }
+
+        /* ========== VOCAB LOGIC ========== */
+        let activeVocabCat = 'Semua';
+
+        function initVocab() {
+            const cats = ['Semua', ...new Set(VOCAB.map(v => v.cat))];
+            const tabsEl = document.getElementById('catTabs');
+            tabsEl.innerHTML = cats.map(c => `<button class="cat-tab${c===activeVocabCat?' active':''}" onclick="setCat('${c}')">${c}</button>`).join('');
+            renderVocab();
+        }
+
+        function setCat(cat) {
+            activeVocabCat = cat;
+            document.querySelectorAll('.cat-tab').forEach(t => {
+                t.classList.toggle('active', t.textContent === cat);
+            });
+            renderVocab();
+        }
+
+        function filterVocab() {
+            renderVocab();
+        }
+
+        function renderVocab() {
+            const q = document.getElementById('vocabSearch').value.toLowerCase();
+            const filtered = VOCAB.filter(v => {
+                const matchCat = activeVocabCat === 'Semua' || v.cat === activeVocabCat;
+                const matchQ = !q || v.en.toLowerCase().includes(q) || v.id.toLowerCase().includes(q);
+                return matchCat && matchQ;
+            });
+            const grid = document.getElementById('vocabGrid');
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="vocab-empty">😔 Tidak ada kata yang ditemukan.<br>Coba kata kunci lain.</div>';
+                return;
+            }
+            grid.innerHTML = filtered.map((v, i) => `
+    <div class="vocab-card" id="vc${i}" onclick="toggleVocab(${i})">
+      <div class="vocab-en">${v.en}</div>
+      <div class="vocab-id">${v.id}</div>
+      <div class="vocab-cat-badge">${v.cat}</div>
+      <div class="vocab-detail">
+        <div class="vocab-example">"${v.ex}"</div>
+        <div class="vocab-translation">${v.exid}</div>
+      </div>
+    </div>
+  `).join('');
+        }
+
+        function toggleVocab(i) {
+            const card = document.getElementById('vc' + i);
+            card.classList.toggle('expanded');
+        }
+
+        /* ========== QUIZ LOGIC ========== */
+        let currentLevel = 0,
+            currentQ = 0,
+            score = 0,
+            lives = 3,
+            streak = 0,
+            answered = false,
+            questions = [];
+
+        function selectLevel(idx) {
+            currentLevel = idx;
+            document.querySelectorAll('.lvl-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+            const info = LEVELS[idx];
+            document.getElementById('introIcon').textContent = info.icon;
+            document.getElementById('introTitle').textContent = 'Level ' + info.name;
+            document.getElementById('introDesc').textContent = info.desc;
+            startGame();
+        }
+
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function startGame() {
+            questions = shuffle(LEVELS[currentLevel].questions).slice(0, 10);
+            currentQ = 0;
+            score = 0;
+            lives = 3;
+            streak = 0;
+            answered = false;
+            document.getElementById('resultScreen').style.display = 'none';
+            document.getElementById('gameArea').style.display = 'block';
+            updateStats();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            if (currentQ >= questions.length || lives <= 0) {
+                showResult();
+                return;
+            }
+            answered = false;
+            const q = questions[currentQ];
+            document.getElementById('qTypeBadge').textContent = q.type;
+            document.getElementById('qText').textContent = q.q;
+            const hintEl = document.getElementById('qHint');
+            hintEl.textContent = q.hint ? '💡 Petunjuk: ' + q.hint : '';
+            hintEl.style.display = q.hint ? 'block' : 'none';
+            const grid = document.getElementById('optionsGrid');
+            grid.innerHTML = '';
+            q.opts.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'opt-btn';
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(i);
+                grid.appendChild(btn);
+            });
+            const fb = document.getElementById('feedbackBox');
+            fb.style.display = 'none';
+            fb.className = 'feedback-box';
+            document.getElementById('nextBtn').style.display = 'none';
+            updateProgress();
+        }
+
+        function checkAnswer(chosen) {
+            if (answered) return;
+            answered = true;
+            const q = questions[currentQ];
+            const btns = document.querySelectorAll('.opt-btn');
+            btns.forEach(b => b.disabled = true);
+            const fb = document.getElementById('feedbackBox');
+            if (chosen === q.ans) {
+                btns[chosen].classList.add('correct');
+                score += (10 + streak * 2);
+                streak++;
+                fb.className = 'feedback-box correct';
+                fb.innerHTML = '✅ <strong>Benar!</strong> ' + q.exp;
+            } else {
+                btns[chosen].classList.add('wrong');
+                btns[q.ans].classList.add('correct');
+                lives--;
+                streak = 0;
+                fb.className = 'feedback-box wrong';
+                fb.innerHTML = '❌ <strong>Salah.</strong> Jawaban: <em>' + q.opts[q.ans] + '</em>. ' + q.exp;
+            }
+            fb.style.display = 'block';
+            updateStats();
+            currentQ++;
+            const nb = document.getElementById('nextBtn');
+            nb.style.display = 'block';
+            nb.textContent = (lives <= 0 || currentQ >= questions.length) ? 'Lihat Hasil 🌸' : 'Lanjut →';
+        }
+
+        function nextQuestion() {
+            if (lives <= 0 || currentQ >= questions.length) {
+                showResult();
+                return;
+            }
+            renderQuestion();
+        }
+
+        function updateStats() {
+            document.getElementById('scoreVal').textContent = score;
+            document.getElementById('streakVal').textContent = streak + (streak >= 3 ? '🔥' : '');
+            const h = ['❤️', '❤️', '❤️'].map((x, i) => i < lives ? x : '🖤').join('');
+            document.getElementById('livesDisplay').textContent = h;
+        }
+
+        function updateProgress() {
+            const pct = Math.round((currentQ / questions.length) * 100);
+            document.getElementById('progressFill').style.width = pct + '%';
+            document.getElementById('pctText').textContent = pct + '%';
+            document.getElementById('qCounter').textContent = 'Soal ' + (currentQ + 1) + ' dari ' + questions.length;
+        }
+
+        function showResult() {
+            document.getElementById('gameArea').style.display = 'none';
+            const rs = document.getElementById('resultScreen');
+            rs.style.display = 'block';
+            const pct = Math.round((score / (questions.length * 10)) * 100);
+            let emoji = '🏆',
+                title = 'Luar Biasa!';
+            if (lives <= 0) {
+                emoji = '😢';
+                title = 'Nyawa Habis!';
+            } else if (pct >= 80) {
+                emoji = '🌸';
+                title = 'Excellent! Kamu Hebat!';
+            } else if (pct >= 60) {
+                emoji = '👍';
+                title = 'Bagus! Terus Berlatih!';
+            } else {
+                emoji = '💪';
+                title = 'Jangan Menyerah!';
+            }
+            const desc = `Kamu mendapatkan ${score} poin dari ${questions.length*10} poin maksimal. ${lives<=0?'Nyawa habis, tapi tetap semangat ya!':pct>=80?'Kamu siap naik ke level berikutnya!':'Coba ulangi untuk hasil lebih baik!'}`;
+            document.getElementById('resultEmoji').textContent = emoji;
+            document.getElementById('resultTitle').textContent = title;
+            document.getElementById('resultDesc').textContent = desc;
+            document.getElementById('resultScore').textContent = score + ' pts';
+            document.getElementById('nextLevelBtn').style.display = currentLevel < LEVELS.length - 1 ? 'inline-block' : 'none';
+        }
+
+        function restartSameLevel() {
+            startGame();
+        }
+
+        function goNextLevel() {
+            if (currentLevel < LEVELS.length - 1) {
+                currentLevel++;
+                document.querySelectorAll('.lvl-btn').forEach((b, i) => b.classList.toggle('active', i === currentLevel));
+                const info = LEVELS[currentLevel];
+                document.getElementById('introIcon').textContent = info.icon;
+                document.getElementById('introTitle').textContent = 'Level ' + info.name;
+                document.getElementById('introDesc').textContent = info.desc;
+                startGame();
+            }
+        }
+
+        // Init
+        startGame();
+        showPage('quiz');
+    </script>
+</body>
+
+</html>
